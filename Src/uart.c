@@ -10,7 +10,7 @@ void USER_USART1_Init( void ){
 	USART1->CR2	&=	~USART_CR2_STOP;//	Step 3 1 Stop bit
 	USART1->BRR	 =	 USARTDIV;//		Step 5 Desired baud rate
 	USART1->CR1	|= 	 USART_CR1_TE;//	Step 6 Transmitter enabled
-	USART1->CR1	|= 	 USART_CR1_TE;//	Step 7 Receiver enabled
+	USART1->CR1	|= 	 USART_CR1_RE;//	Step 7 Receiver enabled
 }
 
 void USER_USART1_Transmit( uint8_t *pData, uint16_t size ){

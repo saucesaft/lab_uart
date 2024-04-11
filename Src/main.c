@@ -3,8 +3,6 @@
 #include "main.h"
 #include "uart.h"
 
-uint8_t msg[] = "Hello World!\r\n";
-
 /* Function prototypes */
 void USER_RCC_ClockEnable( void );
 void USER_GPIO_Init( void );
