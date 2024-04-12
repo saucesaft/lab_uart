@@ -6,12 +6,12 @@
 int _write(int file, char *ptr, int len);
 
 // config registers
-#define USARTDIV        0x444				// 115200 baud rate TODO
+#define USARTDIV        0x45				// 115200 baud rate
 #define USART_CR1_UE    ( 0x1UL << 13U ) 	// enable usart peripheral
 #define USART_CR1_M     ( 0x1UL << 12U )	// word length 8 bits
 #define USART_CR1_TE    ( 0x1UL <<  3U ) 	// enable transmitter
 #define USART_CR1_RE    ( 0x1UL <<  2U ) 	// enable receiver
-#define USART_CR2_STOP  ( 0x3UL << 12U )	// 1.5 stop bits PREGUNTAR
+#define USART_CR2_STOP  ( 0x3UL << 12U )	//  stop bits PREGUNTAR
 
 // status registers
 #define USART_SR_TXE    ( 0x1UL <<  7U )	// transmitter data register empty

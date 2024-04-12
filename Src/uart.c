@@ -8,7 +8,7 @@ void USER_USART1_Init( void ){
 	USART1->CR1	|=	 USART_CR1_UE;//	Step 1 Usart enabled
 	USART1->CR1	&=	~USART_CR1_M;//		Step 2 8 Data bits
 	USART1->CR2	&=	~USART_CR2_STOP;//	Step 3 1 Stop bit
-	USART1->BRR	 =	 USARTDIV;//		Step 5 Desired baud rate
+	USART1->BRR	=	 USARTDIV;//		Step 5 Desired baud rate
 	USART1->CR1	|= 	 USART_CR1_TE;//	Step 6 Transmitter enabled
 	USART1->CR1	|= 	 USART_CR1_RE;//	Step 7 Receiver enabled
 }
@@ -32,7 +32,7 @@ uint8_t USER_USART1_Read_8bit() {
 int _write(int file, char *ptr, int len) {
 	for (int data_idx = 0; data_idx < len; data_idx++) {
 		while ( !(USART1->SR & USART_SR_TXE) );
-		USART1->DR = *ptr;
+		USART1->DR = *ptr++;
 	}
 	return len;
 }
